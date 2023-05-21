@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+div .main{
+    border: 2px solid black;
+    width: 40%;
+    height: 50%;
+
+}
+div .personDatainput{
+    margin-top: 40px;
+    margin-bottom: 70px;
+    margin-left: 30%;
+}
+h1{
+    color: gray;
+    text-align: center;
+}
+</style>
+
+<body>
+
+
+
+
+<div class="main">
+
+
+<div class="personDatainput">
+Name:<input type="text"  id="text1"><br>
+</div>
+
+<div class="personDatainput">
+Age:<input type="text"  id="text2"><br>
+</div>
+
+<div class="personDatainput">
+Birthday:<input type="text"  id="text3"><br>
+
+<button onclick="func()"style="margin-top:50px;margin-left:70px;"> Add user </button>
+
+
+</div>
+<h1 id = "result"> </h1>
+</div>
+
+<script>
+let arr1 = [{Name:"Abrar Khan", Age:'24', Birthday:'15-5-1999'},{Name:"Babar", Age:'24', Birthday:'15-5-2000'},{Name:"Wali Hussain", Age:'24', Birthday:'20-5-2001'}]
+
+// prompt('Please Enter your Name')
+
+function func(){
+ 
+    arr1.push({Name:document.getElementById('text1').value, Age:document.getElementById('text2').value, Birthday:document.getElementById('text3').value })
+
+    let result = arr1.map((elements) =>  `${elements.Name}     ${elements.Age} ${elements.Birthday}` )
+
+    document.getElementById('result').innerText = result
+}
+
+let result = arr1.map((elements) =>  `${elements.Name}     ${elements.Age} ${elements.Birthday}` )
+document.getElementById('result').innerText = result
+
+</script>
+
+
+</body>
+</html>
